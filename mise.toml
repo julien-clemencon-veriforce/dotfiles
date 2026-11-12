@@ -1,0 +1,88 @@
+[bootstrap.brew]
+adopt = true
+
+[bootstrap.packages]
+"brew:coreutils" = "latest"
+"brew:tldr" = "latest"
+"brew:watch" = "latest"
+"brew:wget" = "latest"
+
+"brew-cask:appcleaner" = "latest"
+"brew-cask:camunda-modeler" = "latest"
+"brew-cask:cloudflare-warp" = "latest"
+"brew-cask:docker-desktop" = "latest"
+"brew-cask:firefox" = "latest"
+"brew-cask:font-jetbrains-mono-nerd-font" = "latest"
+"brew-cask:ghostty" = "latest"
+"brew-cask:google-chrome" = "latest"
+"brew-cask:imageoptim" = "latest"
+"brew-cask:microsoft-outlook" = "latest"
+"brew-cask:microsoft-teams" = "latest"
+"brew-cask:monitorcontrol" = "latest"
+"brew-cask:raycast" = "latest"
+"brew-cask:studio-3t-community" = "latest"
+"brew-cask:tableplus" = "latest"
+
+[bootstrap.mise_shell_activate]
+zsh = true
+
+[dotfiles]
+"~/.zshenv/paths" = { line = 'export PATH="$HOME/.local/bin:/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"' }
+"~/.config/zsh" = { source = "config/zsh" }
+"~/.zshrc/config" = { block = '''
+source ~/.config/zsh/clemencon.zsh
+source ~/.config/zsh/docker.zsh
+source ~/.config/zsh/completion.zsh
+source ~/.config/zsh/uv.zsh
+source ~/.config/zsh/starship.zsh
+source ~/.config/zsh/zoxide.zsh
+source ~/.config/zsh/atuin.zsh
+source ~/.config/zsh/go.zsh
+source ~/.config/zsh/android.zsh
+source ~/.config/zsh/ruby.zsh
+source ~/.config/zsh/aws.zsh
+''' }
+"~/.config/mise" = { source = "config/mise" }
+"~/.config/nvim" = { source = "config/nvim" }
+"~/.config/ghostty" = { source = "config/ghostty" }
+"~/.config/git" = { source = "config/git" }
+"~/.config/opencode" = { source = "config/opencode" }
+"~/.config/starship.toml" = { source = "config/starship.toml" }
+"~/.config/gh/config.yml" = { source = "config/gh/config.yml" }
+"~/.config/herdr/config.toml" = { source = "config/herdr/config.toml" }
+
+[bootstrap.macos.dock]
+autohide = true
+orientation = "bottom"
+tilesize = 52
+show_recents = false
+apps = [
+  "/Applications/Ghostty.app",
+  "/Applications/Firefox.app",
+  "/Applications/Google Chrome.app",
+  "/Applications/Microsoft Outlook.app",
+  "/Applications/Microsoft Teams.app",
+]
+
+[bootstrap.macos.finder]
+preferred_view_style = "list"
+show_pathbar = true
+
+[bootstrap.macos.keyboard]
+press_and_hold = false
+key_repeat = 2
+initial_key_repeat = 15
+
+[bootstrap.macos.trackpad]
+tap_to_click = true
+three_finger_drag = true
+
+[bootstrap.macos.defaults]
+"com.apple.screencapture" = { type = "png", "disable-shadow" = true }
+
+[bootstrap.hooks]
+post-defaults = "killall Dock Finder SystemUIServer || true"
+
+[bootstrap.hooks.post-tools]
+description = "Install LazyVim plugins"
+run = 'mise exec -- nvim --headless "+Lazy! install" +qa'

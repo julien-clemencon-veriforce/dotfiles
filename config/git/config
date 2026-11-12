@@ -1,0 +1,65 @@
+[user]
+	name = Julien Clémençon
+	email = julien.clemencon@veriforce.com
+[core]
+	# Treats file paths as case-insensitive
+	ignorecase = true
+[filter "lfs"]
+	# Git Large File Storage configuration for handling large files
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[alias]
+	praise = blame -w -C -C -C
+	forcepush = push --force-with-lease
+	lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(auto)%d%Creset %s %C(green)%an%Creset %C(blue)%ar%Creset' --abbrev-commit
+	checkout-history = !git reflog --date=relative | grep checkout | head -20
+[column]
+	# Displays branch names and other lists in columns for better readability
+	ui = auto
+[branch]
+	# Sorts branches by most recent commit date (newest first)
+	sort = -committerdate
+[rerere]
+	# Reuses recorded conflict resolutions automatically during rebases
+	enabled = true
+	autoupdate = true
+[rebase]
+	# Makes rebasing more convenient by automatically squashing fixup commits, stashing changes, and updating refs
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
+[tag]
+	# Sorts tags by version number properly (0.5.1, 0.5.2, 0.5.10) instead of alphabetically
+	sort = version:refname
+[init]
+	# Sets the default branch name for new repositories to 'main'
+	defaultBranch = main
+[diff]
+	# Uses the more advanced histogram diff algorithm for better code movement detection
+	algorithm = histogram
+[push]
+	# Simplifies pushing by automatically setting up remote tracking and including tags
+	default = simple
+	autoSetupRemote = true
+	followTags = true
+[fetch]
+	# Cleans up deleted remote branches and tags when fetching
+	prune = true
+	pruneTags = true
+	all = true
+[help]
+	# Prompts to correct typos in git commands
+	autocorrect = prompt
+[commit]
+	# Shows diff in commit message editor for better context
+	verbose = true
+[pull]
+	# Uses rebase instead of merge when pulling
+	rebase = true
+[merge]
+	# Shows original content in merge conflicts for better context
+	conflictstyle = zdiff3
+[url "git@github.com-veriforce:Alcumus/"]
+	insteadOf = git@github.com:Alcumus/

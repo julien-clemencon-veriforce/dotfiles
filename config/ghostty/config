@@ -1,0 +1,12 @@
+title = " "
+macos-titlebar-proxy-icon = hidden
+window-width = 128
+window-height = 44
+window-padding-x = 0
+window-padding-y = 0
+
+#font-family = "Iosevka Nerd Font"
+font-family = "JetBrainsMono Nerd Font"
+adjust-cell-height = 20%
+theme = GitHub Light High Contrast
+mouse-hide-while-typing = true

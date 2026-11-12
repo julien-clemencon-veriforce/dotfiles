@@ -1,0 +1,3 @@
+*.rayconfig
+config/opencode/node_modules/
+config/nvim/lazy-lock.json
