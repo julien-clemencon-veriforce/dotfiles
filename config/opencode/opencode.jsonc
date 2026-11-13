@@ -1,0 +1,22 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "lsp": true,
+  "instructions": [
+    "TESTING.md"
+  ],
+  "permission": {
+    "bash": {
+      "git add*": "deny",
+      "git commit*": "deny",
+      "git push*": "deny",
+      "git stash*": "deny",
+      "git reset*": "deny",
+      "git checkout*": "deny",
+      "git restore*": "deny",
+      "git rebase*": "deny",
+      "git merge*": "deny",
+      "git cherry-pick*": "deny",
+      "git tag*": "deny"
+    }
+  }
+}
