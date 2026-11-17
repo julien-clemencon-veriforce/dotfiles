@@ -5,7 +5,7 @@ alias speed="networkQuality"
 alias cakelog="tail -F app/tmp/logs/error.log | bat --paging=never --style=plain --language=log"
 alias copybranch="git branch --show-current | pbcopy"
 alias flushdns="sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
-alias miseup="mise self-update && mise -C ~/Developer/dotfiles bootstrap --upgrade"
+alias miseup='mise self-update && mise -C ~/Developer/dotfiles bootstrap --upgrade && nvim --headless "+Lazy! sync" +qa'
 alias ai="opencode"
 alias db="mycli -h 127.0.0.1 -P 3307 -u root -p root"
 alias bat="bat --style=-numbers"

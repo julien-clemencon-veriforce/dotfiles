@@ -3,7 +3,6 @@ adopt = true
 
 [bootstrap.packages]
 "brew:coreutils" = "latest"
-"brew:tldr" = "latest"
 "brew:watch" = "latest"
 "brew:wget" = "latest"
 

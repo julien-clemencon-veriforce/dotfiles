@@ -68,7 +68,7 @@ Then open a new shell.
 | Task | Command |
 | --- | --- |
 | Apply config changes | `mise bootstrap` (from this directory) |
-| Upgrade mise, packages, and tools | `miseup` (alias for `mise self-update && mise -C ~/Developer/dotfiles bootstrap --upgrade`) |
+| Upgrade mise, packages, tools, and LazyVim plugins | `miseup` (alias for `mise self-update && mise -C ~/Developer/dotfiles bootstrap --upgrade && nvim --headless "+Lazy! sync" +qa`) |
 | Add a CLI tool | `mise use -g <tool>` (writes to `config/mise/config.toml`) |
 | Add an app or formula | Add a `brew-cask:` or `brew:` entry to `mise.toml`, then `mise bootstrap` |
 | Check state | `mise bootstrap status` |
