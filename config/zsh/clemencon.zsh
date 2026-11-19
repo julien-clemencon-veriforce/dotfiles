@@ -9,6 +9,7 @@ alias miseup='mise self-update && mise -C ~/Developer/dotfiles bootstrap --upgra
 alias ai="opencode"
 alias db="mycli -h 127.0.0.1 -P 3307 -u root -p root"
 alias bat="bat --style=-numbers"
+alias ask="opencode mini --model github-copilot/gpt-6-luna#medium"
 
 # Application aliases.
 alias lgit="lazygit"
